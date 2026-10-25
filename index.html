@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Число Грэма на пальцах</title>
+<meta name="description" content="Домашний доклад на 30 минут: от одной точки до g64.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Golos+Text:wght@400;600;900&family=JetBrains+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<filter id="chalky" x="-12%" y="-12%" width="124%" height="124%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.014" numOctaves="2" seed="7" result="w"/>
+  <feDisplacementMap in="SourceGraphic" in2="w" scale="5" xChannelSelector="R" yChannelSelector="G" result="d"/>
+  <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" seed="3" result="g"/>
+  <feDisplacementMap in="d" in2="g" scale="1.8" xChannelSelector="R" yChannelSelector="G"/>
+</filter>
+</defs></svg>
+
+<div id="deck" tabindex="0">
+
+<!-- 1 -->
+<section class="slide">
+  <div class="eyebrow">на пальцах</div>
+  <h1>Число Грэма</h1>
+</section>
+
+<!-- 2 -->
+<section class="slide">
+  <h2 class="dim">Назови самое большое число,<br>которое ты знаешь</h2>
+</section>
+
+<!-- 3 -->
+<section class="slide">
+  <div class="d big"></div>
+  <div class="num">1</div>
+</section>
+
+<!-- 4 -->
+<section class="slide">
+  <div class="dotrow" id="row10"></div>
+  <div class="num">10</div>
+</section>
+
+<!-- 5 -->
+<section class="slide">
+  <div class="dotgrid" id="grid100"></div>
+  <div class="num">100</div>
+</section>
+
+<!-- 6 -->
+<section class="slide">
+  <div class="fieldwrap">
+    <canvas class="dots" data-n="1000" data-cols="40" data-pitch="24" data-r="7"></canvas>
+    <div class="refbox"><i style="width:120px;height:120px"></i><span>это было 100</span></div>
+  </div>
+  <div class="num" data-count="1000">1 000</div>
+</section>
+
+<!-- 7 -->
+<section class="slide">
+  <div class="fieldwrap">
+    <canvas class="dots" data-n="10000" data-cols="100" data-pitch="24" data-r="7"></canvas>
+    <div class="refbox"><i style="width:96px;height:60px"></i><span>это была 1 000</span></div>
+  </div>
+  <div class="num" data-count="10000">10 000</div>
+</section>
+
+<!-- 8 -->
+<section class="slide">
+  <div class="fieldwrap">
+    <canvas class="dots" data-n="100000" data-cols="400" data-pitch="8" data-r="2.4"></canvas>
+    <div class="refbox"><i style="width:66px;height:66px"></i><span>это было 10 000</span></div>
+  </div>
+  <div class="num" data-count="100000">100 000</div>
+</section>
+
+<!-- 9 -->
+<section class="slide">
+  <div class="fieldwrap">
+    <canvas class="dots" data-n="1000000" data-cols="1250" data-pitch="2" data-r="1"></canvas>
+    <div class="refbox"><i style="width:62px;height:39px"></i><span>это было 100 000</span></div>
+  </div>
+  <div class="num" data-count="1000000">1 000 000</div>
+  <div class="hand q">лист шириной с ладонь и длиной 4,5 метра</div>
+</section>
+
+<!-- 10 -->
+<section class="slide">
+  <h3>если перевести в секунды</h3>
+  <div class="ladder" style="width:min(780px,100%)">
+    <div class="lrow"><span>1 000 000</span><span class="gold">11,5 дней</span></div>
+    <div class="lrow"><span>1 000 000 000</span><span class="gold">32 года</span></div>
+    <div class="lrow"><span>1 000 000 000 000</span><span class="gold">31 700 лет</span></div>
+  </div>
+  <div class="hand">каждый раз мы дописывали три нолика</div>
+</section>
+
+<!-- 11 -->
+<section class="slide">
+  <div class="photo"><canvas id="ly" width="1000" height="300"></canvas></div>
+  <div class="num sm">9 500 000 000 000 км</div>
+  <div class="hand q">столько свет пролетает за год</div>
+</section>
+
+<!-- 12 -->
+<section class="slide">
+  <div class="photo r2"><img src="img/12.png" alt="Муравьи" onerror="this.closest(&#39;.photo&#39;).hidden=true"></div>
+  <div class="num sm">10<sup>15</sup> муравьёв</div>
+</section>
+
+<!-- 13 -->
+<section class="slide">
+  <div class="photo"><img src="img/13.png" alt="Песок" onerror="this.closest(&#39;.photo&#39;).hidden=true"></div>
+  <div class="num sm">7 500 000 000 000 000 000</div>
+  <div class="hand q">песчинок на всех пляжах Земли</div>
+</section>
+
+<!-- 14 -->
+<section class="slide">
+  <div class="split">
+    <div style="display:flex;justify-content:flex-end">
+      <div class="photo tall"><img src="img/14.png" alt="Стакан воды" onerror="this.closest(&#39;.photo&#39;).hidden=true"></div>
+    </div>
+    <div class="vr"></div>
+    <div class="rows" style="align-items:flex-start">
+      <div class="num">10<sup>25</sup></div>
+      <div class="hand q" style="text-align:left">молекул в одном стакане.<br>это в миллион раз больше,<br>чем песчинок на всех пляжах</div>
+    </div>
+  </div>
+</section>
+
+<!-- 15 -->
+<section class="slide">
+  <div class="photo r2"><img src="img/15.png" alt="Космос" onerror="this.closest(&#39;.photo&#39;).hidden=true"></div>
+  <div class="num">10<sup>80</sup></div>
+  <div class="hand q">все атомы наблюдаемой Вселенной</div>
+
+  <div class="toy step" id="toyScale">
+    <div class="toy-head">покрути степень десятки</div>
+    <input type="range" id="scaleRange" min="0" max="17" value="0" step="1" aria-label="степень десяти">
+    <div class="toy-out">
+      <span class="toy-num" id="scaleNum">1</span>
+      <span class="toy-cap" id="scaleCap">одна точка — с неё мы начали</span>
+    </div>
+  </div>
+</section>
+
+<!-- 16 -->
+<section class="slide">
+  <div class="num">10<sup>100</sup> &nbsp;·&nbsp; гугол</div>
+  <div class="zeros" id="googol"></div>
+</section>
+
+<!-- 17 -->
+<section class="slide">
+  <div class="photo"><svg id="cards" viewBox="0 0 760 420" width="760" aria-label="Веер игральных карт"></svg></div>
+  <div class="num sm">52! ≈ 8 × 10<sup>67</sup></div>
+</section>
+
+<!-- 18 -->
+<section class="slide">
+  <h3>гуголплекс</h3>
+  <div class="num" style="font-size:clamp(38px,10vh,120px)">10<sup>(10<sup>100</sup>)</sup></div>
+  <div class="hand q">единица, за которой идёт гугол нулей</div>
+</section>
+
+<!-- 19 -->
+<section class="slide">
+  <div class="split">
+    <div class="rows">
+      <div class="dim" style="font-family:var(--f-mono);font-size:clamp(14px,2.3vh,24px);line-height:1.9">
+        10 → 100 → 1000 → …<br>→ гугол → гуголплекс</div>
+      <div class="hand q">мы всё время делали одно:<br>приписывали нули</div>
+    </div>
+    <div class="vr"></div>
+    <h2 class="gold">А если менять<br>не число,<br>а само действие?</h2>
+  </div>
+</section>
+
+<!-- 20 -->
+<section class="slide">
+  <h3>лестница действий</h3>
+  <div class="ladder" style="width:min(860px,100%)">
+    <div class="lrow step"><span>3 + 3 + 3 + 3 &nbsp;=&nbsp; 3 × 4</span><span class="note">умножение = сложение много раз</span></div>
+    <div class="lrow step"><span>3 × 3 × 3 × 3 &nbsp;=&nbsp; 3<sup>4</sup></span><span class="note">степень = умножение много раз</span></div>
+    <div class="lrow step" style="border-color:var(--gold)"><span class="gold">3 ? 3 ? 3 ? 3 &nbsp;=&nbsp; ?</span><span class="note gold">степень много раз = ?</span></div>
+  </div>
+</section>
+
+<!-- 21 -->
+<section class="slide">
+  <div class="eyebrow">стрелка Дональда Кнута</div>
+  <div class="num">3 ↑ 3 = 27</div>
+  <div class="hand">↑ значит «перемножь тройки»</div>
+</section>
+
+<!-- 22 -->
+<section class="slide">
+  <div class="num">3 ↑↑ 3</div>
+  <h3>две стрелки = построй башню из троек</h3>
+  <div class="row3" style="align-items:center;gap:clamp(24px,6vw,90px)">
+    <svg class="draw" viewBox="-10 0 170 215" width="150" aria-label="Башня из трёх троек">
+      <text x="58" y="52" style="font-size:40px">3</text>
+      <text x="40" y="108" style="font-size:46px">3</text>
+      <text x="20" y="172" style="font-size:54px">3</text>
+      <path class="s thin dimmed" d="M14 186 L96 186"/>
+      <text x="-8" y="208" class="h">считаем сверху вниз</text>
+    </svg>
+    <div class="ladder" style="width:min(440px,100%)">
+      <div class="lrow step"><span>3<sup>3</sup></span><span class="gold">27</span></div>
+      <div class="lrow step"><span>3<sup>27</sup></span><span class="gold" data-count="7625597484987">7 625 597 484 987</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 23 -->
+<section class="slide">
+  <h3>добавляем в башню по одной тройке</h3>
+  <div class="row3">
+    <div class="card step">
+      <svg class="draw" viewBox="0 0 90 150" width="70"><g id="t3"></g></svg>
+      <div class="k">3 ↑↑ 3</div><div class="v">13 цифр</div>
+    </div>
+    <div class="card step">
+      <svg class="draw" viewBox="0 0 90 190" width="70"><g id="t4"></g></svg>
+      <div class="k">3 ↑↑ 4</div><div class="v gold">3,6 трлн цифр</div>
+    </div>
+    <div class="card step">
+      <svg class="draw" viewBox="0 0 90 230" width="70"><g id="t5"></g></svg>
+      <div class="k">3 ↑↑ 5</div><div class="v red">больше гуголплекса</div>
+    </div>
+  </div>
+
+  <div class="toy step" id="toyTower">
+    <div class="toy-head">добавь тройку в башню сам</div>
+    <div class="toy-row">
+      <svg class="draw" id="towerPreview" viewBox="0 0 120 250" width="110" aria-hidden="true"></svg>
+      <input type="range" id="towerRange" min="1" max="6" value="1" step="1" aria-label="сколько троек в башне">
+    </div>
+    <div class="toy-out">
+      <span class="toy-num" id="towerVal">3</span>
+      <span class="toy-cap" id="towerCap">одна тройка — это просто тройка</span>
+    </div>
+  </div>
+</section>
+
+<!-- 24 -->
+<section class="slide">
+  <div class="split">
+    <div style="display:flex;justify-content:flex-end">
+      <div class="photo tall"><img src="img/24.png" alt="Башня из троек до Солнца" onerror="this.closest(&#39;.photo&#39;).hidden=true"></div>
+    </div>
+    <div class="vr"></div>
+    <div class="rows" style="align-items:flex-start;gap:clamp(6px,1.4vh,16px)">
+      <div class="num">3 ↑↑↑ 3</div>
+      <div class="num" style="font-size:clamp(15px,2.5vh,30px);text-align:left;
+        white-space:normal;line-height:1.3">= &nbsp;3 ↑↑ 7 625 597 484 987</div>
+      <div class="hand" style="text-align:left">152 млн км —<br>от Земли до Солнца</div>
+    </div>
+  </div>
+</section>
+
+<!-- 25 -->
+<section class="slide" style="background:#0a0f0e">
+  <div class="num" style="font-size:clamp(52px,16vh,170px)">3 ↑↑↑ 3</div>
+</section>
+
+<!-- 26 -->
+<section class="slide">
+  <div class="num">g<sub>1</sub> = 3 ↑↑↑↑ 3</div>
+  <div class="ladder" style="width:min(880px,100%);text-align:center">
+    <div class="lrow" style="justify-content:center;border:0">
+      <span class="dim">3 ↑↑↑↑ 3 &nbsp;=&nbsp; 3 ↑↑↑ ( 3 ↑↑↑ 3 )</span></div>
+  </div>
+  <div class="hand">и это только первый шаг</div>
+</section>
+
+<!-- 27 -->
+<section class="slide">
+  <div class="ladder" style="width:min(900px,100%)">
+    <div class="lrow"><span>g<sub>1</sub> = 3 ↑↑↑↑ 3</span><span class="note">4 стрелки</span></div>
+  </div>
+  <div class="step" style="width:min(900px,100%)">
+    <div class="gold" id="arrows" style="font-family:var(--f-mono);font-size:clamp(13px,2.1vh,21px);
+      line-height:1.35;word-break:break-all;text-align:left;max-height:24vh;overflow:hidden"></div>
+  </div>
+  <div class="hand step">стрелок между тройками — g₁ штук</div>
+
+  <div class="toy step" id="toyArrows">
+    <div class="toy-head">прокрути стрелки ещё раз</div>
+    <div class="toy-btns" id="arrowBtns"></div>
+    <div class="toy-out">
+      <span class="toy-num" id="arrowExpr">3 ↑ 3 = 27</span>
+      <span class="toy-cap" id="arrowCap">перемножь три тройки</span>
+    </div>
+  </div>
+</section>
+
+<!-- 28 -->
+<section class="slide">
+  <div class="ladder" style="width:min(660px,100%)">
+    <div class="lrow"><span>g<sub>1</sub></span><span class="note">3 ↑↑↑↑ 3</span></div>
+    <div class="lrow step"><span>g<sub>2</sub></span><span class="note">3 ↑(g₁ штук)↑ 3</span></div>
+    <div class="lrow step"><span>g<sub>3</sub></span><span class="note">3 ↑(g₂ штук)↑ 3</span></div>
+    <div class="lrow step dim" style="justify-content:center"><span>⋮</span></div>
+    <div class="lrow step" style="border-color:var(--gold)">
+      <span class="gold">g<sub>64</sub></span><span class="note gold">← число Грэма</span></div>
+  </div>
+</section>
+
+<!-- 29 -->
+<section class="slide">
+  <div class="photo"><img src="img/29.png" alt="Чёрная дыра" onerror="this.closest(&#39;.photo&#39;).hidden=true"></div>
+  <div class="hand q">информация тоже имеет вес</div>
+</section>
+
+<!-- 30 -->
+<section class="slide">
+  <div class="num sm" style="font-family:var(--f-mono);word-break:break-all;max-width:22ch">
+    <span class="dim">…?????????</span><span class="gold">2464195387</span></div>
+  <div class="hand q">последние цифры мы знаем,<br>а начало — нет</div>
+</section>
+
+<!-- 31 -->
+<section class="slide">
+  <h3>откуда оно вообще взялось</h3>
+  <div class="row3" style="align-items:center;gap:clamp(24px,7vw,100px)">
+    <svg class="draw" viewBox="-24 -24 248 248" width="170" aria-label="Квадрат с раскрашенными рёбрами"><g id="k4"></g></svg>
+    <div class="hand q" style="font-size:34px">→</div>
+    <svg class="draw step" viewBox="-24 -24 288 288" width="200" aria-label="Полный граф на восьми точках"><g id="k8"></g></svg>
+  </div>
+
+  <div class="toy wide step" id="toyRamsey">
+    <div class="toy-head">попробуй раскрасить без одноцветного треугольника</div>
+    <div class="toy-row">
+      <svg id="ramseySvg" viewBox="-26 -26 292 292" aria-label="Полный граф, рёбра можно перекрашивать"></svg>
+      <div class="toy-side">
+        <label>точек: <b id="ramseyN">6</b></label>
+        <input type="range" id="ramseyRange" min="3" max="7" value="6" step="1" aria-label="сколько точек">
+        <button class="btn" id="ramseyShuffle" type="button">перекрасить случайно</button>
+        <span class="toy-cap" id="ramseyMsg">кликай по линиям, чтобы менять цвет</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 32 -->
+<section class="slide">
+  <div class="split" style="align-items:center">
+    <div style="font-family:var(--f-mono);font-weight:700;font-size:clamp(60px,18vh,210px);
+      line-height:1;text-align:center">g<sub>64</sub></div>
+    <div class="vr"></div>
+    <div class="rows step">
+      <div class="num gold" style="font-size:clamp(40px,8vh,90px)">13</div>
+      <div class="hand q">а настоящий ответ,<br>похоже, вот такой</div>
+    </div>
+  </div>
+</section>
+
+<!-- 33 -->
+<section class="slide">
+  <div class="d big"></div>
+  <div class="num dim" style="font-size:clamp(18px,2.8vh,32px)">1</div>
+</section>
+
+<div id="bar"></div>
+<div id="notes"></div>
+<div id="hud">
+  <button id="prev" type="button">←</button>
+  <button id="next" type="button">→</button>
+  <button id="notesBtn" type="button">заметки (N)</button>
+  <button id="fsBtn" type="button">во весь экран (F)</button>
+  <span id="tip">стрелки / пробел — дальше</span>
+  <span id="counter">1 / 33</span>
+</div>
+</div>
+
+<script src="assets/deck.js"></script>
+</body>
+</html>
